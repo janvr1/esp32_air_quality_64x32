@@ -160,7 +160,7 @@ void measure(void *pv)
     xQueueSend(co2_q, &CO2, portMAX_DELAY);
     xQueueSend(t_q, &t, portMAX_DELAY);
     xQueueSend(hum_q, &hum, portMAX_DELAY);
-    delay(1000);
+    delay(5000);
     // if ((millis() - t_web) > WEB_INTERVAL * 60000)
     if (!measurement_sent && (minute() == 30 || minute() == 0))
     {
