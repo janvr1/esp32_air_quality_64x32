@@ -8,8 +8,8 @@
 #include <Ticker.h>
 #include <zrak_api_esp32.h>
 
-#define SSID "wifi2"
-#define PASSWORD "vsegrepozraku"
+#include "secrets.h"
+
 
 #define NTPSERVER "pool.ntp.org"
 
@@ -37,7 +37,7 @@ Ticker animation;
 TaskHandle_t taskMeasure;
 TaskHandle_t taskDisplay;
 QueueHandle_t co2_q, t_q, hum_q;
-zrak_client zrak("jan", "janvr1");
+zrak_client zrak(USERNAME, PASSWORD);
 
 unsigned long t_5 = millis();
 unsigned long t_1 = millis();
@@ -54,7 +54,7 @@ void setup()
   lm.init();
   animation.attach_ms(10, startUpAnimation);
   WiFi.enableAP(false);
-  WiFi.begin(SSID, PASSWORD);
+  WiFi.begin(SSID, WIFIPASS);
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
