@@ -87,7 +87,7 @@ void setup()
       0,              /* Priority of the task */
       &taskMeasure,   /* Task handle. */
       0);
-  setTime(timeClient.getEpochTime() + 3600);
+  setTime(timeClient.getEpochTime() + 7200);
   timeClient.end();
   animation.detach();
 
