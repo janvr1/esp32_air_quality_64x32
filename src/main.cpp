@@ -17,6 +17,7 @@
 #define WEB_INTERVAL 30 //minute
 
 #define SENSOR_BME280
+// #define SENSOR_SHT30
 
 #ifdef SENSOR_BME280
 #include <jan_bme280.h>
